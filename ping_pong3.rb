@@ -47,10 +47,12 @@ class EchoServer
 
     loop do
       read = socket.readpartial(4096)
+      puts read.bytes
       response = {}
       response[:time] = Time.now
-      response[:command] = read.force_encoding('UTF-8')
-      response[:session_counter] = actor.increment
+      response[:bytes] = read.bytes
+      response[:string] = read.force_encoding(Encoding::CP1251)
+      response[:counter] = actor.increment
       begin
         json = response.to_json
       rescue StandardError => e
@@ -58,10 +60,10 @@ class EchoServer
       end
       socket.write json
     end
-  rescue EOFError
+  rescue EOFError, Errno::ECONNRESET
     puts "*** #{host}:#{port} disconnected"
-    socket.close
     actor.terminate
+    socket.close
   end
 end
 
