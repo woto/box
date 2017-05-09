@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <title>Box</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  </head>
   <body>
-    <%= yield %>
+    <%= yield(:content) %>
   </body>
 </html>
