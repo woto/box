@@ -1,0 +1,6 @@
+<%= form_with(model: communicate, html: {id: 'communicate-form', class: 'form-inline d-flex justify-content-center mb-4'}) do |form| %>
+
+  <%= form.text_field :message, id: :communicate_message, class: 'form-control mr-3', style: 'width: auto' %>
+  <%= form.button "Send", class: 'btn btn-primary', data: { disable_with: "Wait" } %>
+
+<% end %>

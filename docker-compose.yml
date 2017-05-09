@@ -40,4 +40,5 @@ services:
       - postgres
     ports:
       - "8084:8084"
+      - "8085:8085"
     command: ruby ./ping_pong4.rb 8084

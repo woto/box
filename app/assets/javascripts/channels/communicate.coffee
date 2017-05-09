@@ -1,12 +1,12 @@
 App.communicate = App.cable.subscriptions.create "CommunicateChannel",
   connected: ->
-    # Called when the subscription is ready for use on the server
+    $('#websocket-status').text('on')
 
   disconnected: ->
-    # Called when the subscription has been terminated by the server
+    $('#websocket-status').text('off')
 
   received: (data) ->
-    # Called when there's incoming data on the websocket for this channel
+    $('tbody').prepend('<tr><td>'+data+'</td></tr>');
 
   status: ->
     @perform 'status'
