@@ -1,11 +1,43 @@
 version: '2'
 services:
-  app:
+  postgres:
+    image: postgres:9.6.2
+    environment:
+      - POSTGRES_PASSWORD=123123123
+      - POSTGRES_USER=box
+  redis:
+    image: redis:3.0.7
+    depends_on:
+      - postgres
+  deprecated_rails:
     build: .
+    image: box
     volumes:
       - .:/app
     ports:
       - "8082:8082"
-    restart: always
     tty: true
     stdin_open: true
+    depends_on:
+      - redis
+    command: ruby ./ping_pong3.rb
+  rails:
+    image: box
+    volumes:
+      - .:/app
+    ports:
+      - "8083:8083"
+    depends_on:
+      - celluloid
+      - postgres
+    command: ./bin/rails s -p 8083 -b 0.0.0.0
+  celluloid:
+    image: box
+    volumes:
+      - .:/app
+    depends_on:
+      - deprecated_rails
+      - postgres
+    ports:
+      - "8084:8084"
+    command: ruby ./ping_pong4.rb 8084

@@ -1,16 +1,25 @@
 FROM ruby:2.3.4
+MAINTAINER oganer@gmail.com
 
+# locales
 RUN apt-get update -qq
 RUN apt-get install -y locales
 RUN locale-gen ru_RU.UTF-8 && update-locale
 ENV LANG=ru_RU.UTF-8
 
-MAINTAINER oganer@gmail.com
 RUN apt-get update -qq && apt-get install -y \
-	build-essential nodejs vim
+	apt-transport-https build-essential curl wget vim
+
+# nodejs
+RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
+RUN apt-get install -y nodejs
+
+# yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update -qq && apt-get install -y yarn
+
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
-RUN gem install nio4r celluloid celluloid-io byebug
-EXPOSE 8082
-CMD ruby ./ping_pong3.rb
+RUN bundle install
