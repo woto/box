@@ -1,0 +1,47 @@
+<%= form_with(model: cell, local: true) do |form| %>
+  <% if cell.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cell.errors.count, "error") %> prohibited this cell from being saved:</h2>
+
+      <ul>
+      <% cell.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :device_id %>
+    <%= form.text_field :device_id, id: :cell_device_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_working %>
+    <%= form.check_box :is_working, id: :cell_is_working %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_fill %>
+    <%= form.check_box :is_fill, id: :cell_is_fill %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.number_field :width, id: :cell_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height, id: :cell_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :length %>
+    <%= form.number_field :length, id: :cell_length %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

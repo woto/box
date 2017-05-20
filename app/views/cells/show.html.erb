@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @cell.device %>
+</p>
+
+<p>
+  <strong>Is working:</strong>
+  <%= @cell.is_working %>
+</p>
+
+<p>
+  <strong>Is fill:</strong>
+  <%= @cell.is_fill %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @cell.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @cell.height %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @cell.length %>
+</p>
+
+<%= link_to 'Edit', edit_cell_path(@cell) %> |
+<%= link_to 'Back', cells_path %>
