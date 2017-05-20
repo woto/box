@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :external_reference %>
+    <%= form.text_field :external_reference, id: :cell_external_reference %>
+  </div>
+
+  <div class="field">
     <%= form.label :is_working %>
     <%= form.check_box :is_working, id: :cell_is_working %>
   </div>

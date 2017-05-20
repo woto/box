@@ -2,6 +2,7 @@
 
 one:
   device: one
+  external_reference: MyString
   is_working: false
   is_fill: false
   width: 1
@@ -10,6 +11,7 @@ one:
 
 two:
   device: two
+  external_reference: MyString
   is_working: false
   is_fill: false
   width: 1

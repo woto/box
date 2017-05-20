@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Device</th>
+      <th>External reference</th>
       <th>Is working</th>
       <th>Is fill</th>
       <th>Width</th>
@@ -19,6 +20,7 @@
     <% @cells.each do |cell| %>
       <tr>
         <td><%= cell.device %></td>
+        <td><%= cell.external_reference %></td>
         <td><%= cell.is_working %></td>
         <td><%= cell.is_fill %></td>
         <td><%= cell.width %></td>

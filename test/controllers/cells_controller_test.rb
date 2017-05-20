@@ -17,7 +17,7 @@ class CellsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cell" do
     assert_difference('Cell.count') do
-      post cells_url, params: { cell: { device_id: @cell.device_id, height: @cell.height, is_fill: @cell.is_fill, is_working: @cell.is_working, length: @cell.length, width: @cell.width } }
+      post cells_url, params: { cell: { device_id: @cell.device_id, external_reference: @cell.external_reference, height: @cell.height, is_fill: @cell.is_fill, is_working: @cell.is_working, length: @cell.length, width: @cell.width } }
     end
 
     assert_redirected_to cell_url(Cell.last)
@@ -34,7 +34,7 @@ class CellsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cell" do
-    patch cell_url(@cell), params: { cell: { device_id: @cell.device_id, height: @cell.height, is_fill: @cell.is_fill, is_working: @cell.is_working, length: @cell.length, width: @cell.width } }
+    patch cell_url(@cell), params: { cell: { device_id: @cell.device_id, external_reference: @cell.external_reference, height: @cell.height, is_fill: @cell.is_fill, is_working: @cell.is_working, length: @cell.length, width: @cell.width } }
     assert_redirected_to cell_url(@cell)
   end
 

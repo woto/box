@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :external_id %>
-    <%= form.text_field :external_id, id: :device_external_id %>
+    <%= form.label :external_reference %>
+    <%= form.text_field :external_reference, id: :device_external_reference %>
   </div>
 
   <div class="field">
@@ -34,11 +34,6 @@
   <div class="field">
     <%= form.label :is_working %>
     <%= form.check_box :is_working, id: :device_is_working %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment, id: :device_comment %>
   </div>
 
   <div class="actions">

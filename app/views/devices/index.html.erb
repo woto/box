@@ -5,12 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>External</th>
+      <th>External reference</th>
       <th>Lat</th>
       <th>Lng</th>
       <th>Location</th>
       <th>Is working</th>
-      <th>Comment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +17,11 @@
   <tbody>
     <% @devices.each do |device| %>
       <tr>
-        <td><%= device.external_id %></td>
+        <td><%= device.external_reference %></td>
         <td><%= device.lat %></td>
         <td><%= device.lng %></td>
         <td><%= device.location %></td>
         <td><%= device.is_working %></td>
-        <td><%= device.comment %></td>
         <td><%= link_to 'Show', device %></td>
         <td><%= link_to 'Edit', edit_device_path(device) %></td>
         <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>

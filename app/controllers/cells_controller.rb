@@ -69,6 +69,6 @@ class CellsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cell_params
-      params.require(:cell).permit(:device_id, :is_working, :is_fill, :width, :height, :length)
+      params.require(:cell).permit(:device_id, :external_reference, :is_working, :is_fill, :width, :height, :length)
     end
 end

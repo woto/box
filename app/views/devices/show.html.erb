@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>External:</strong>
-  <%= @device.external_id %>
+  <strong>External reference:</strong>
+  <%= @device.external_reference %>
 </p>
 
 <p>
@@ -23,11 +23,6 @@
 <p>
   <strong>Is working:</strong>
   <%= @device.is_working %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @device.comment %>
 </p>
 
 <%= link_to 'Edit', edit_device_path(@device) %> |
