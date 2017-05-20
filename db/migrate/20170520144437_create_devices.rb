@@ -5,7 +5,7 @@ class CreateDevices < ActiveRecord::Migration[5.1]
       t.float :lat
       t.float :lng
       t.text :location
-      t.integer :is_working
+      t.boolean :is_working
       t.text :comment
 
       t.timestamps

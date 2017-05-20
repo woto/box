@@ -5,7 +5,7 @@ one:
   lat: 1.5
   lng: 1.5
   location: MyText
-  is_working: 1
+  is_working: false
   comment: MyText
 
 two:
@@ -13,5 +13,5 @@ two:
   lat: 1.5
   lng: 1.5
   location: MyText
-  is_working: 1
+  is_working: false
   comment: MyText
