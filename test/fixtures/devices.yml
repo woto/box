@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  external_id: MyString
+  lat: 1.5
+  lng: 1.5
+  location: MyText
+  is_working: 1
+  comment: MyText
+
+two:
+  external_id: MyString
+  lat: 1.5
+  lng: 1.5
+  location: MyText
+  is_working: 1
+  comment: MyText
