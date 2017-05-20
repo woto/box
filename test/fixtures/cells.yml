@@ -5,6 +5,7 @@ one:
   external_reference: MyString
   is_working: false
   is_fill: false
+  is_open: false
   width: 1
   height: 1
   length: 1
@@ -14,6 +15,7 @@ two:
   external_reference: MyString
   is_working: false
   is_fill: false
+  is_open: false
   width: 1
   height: 1
   length: 1

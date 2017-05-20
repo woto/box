@@ -32,6 +32,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :is_open %>
+    <%= form.check_box :is_open, id: :cell_is_open %>
+  </div>
+
+  <div class="field">
     <%= form.label :width %>
     <%= form.number_field :width, id: :cell_width %>
   </div>

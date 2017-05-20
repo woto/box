@@ -5,6 +5,7 @@ class CreateCells < ActiveRecord::Migration[5.1]
       t.string :external_reference
       t.boolean :is_working
       t.boolean :is_fill
+      t.boolean :is_open
       t.integer :width
       t.integer :height
       t.integer :length
