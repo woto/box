@@ -54,3 +54,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'celluloid'
 gem 'celluloid-io'
+gem 'devise', github: 'plataformatec/devise'
+gem 'carrierwave'
+gem 'sidekiq'
