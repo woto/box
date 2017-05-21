@@ -29,7 +29,12 @@ Server - S - Сервер
 статус также может прийти в любой момент со стороны D
 		
 	D > {command: “status”, is_working: true, id: “x”, cells: [{cell: “y”, is_open: true}, {cell: “z”, is_open: false}]
-
+
+### flash
+Отправка пакетов записи в flash от S:
+
+    S > {"command": "flash", "value":"FLASH:xxxxx:yyyyyyyy"}
+    D > OK: {"command": "flash", "value":"FLASH:xxxxx:yyyyyyyy"}
 
 ## Server
 
