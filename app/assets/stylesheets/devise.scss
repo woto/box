@@ -1,0 +1,38 @@
+body#devise {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .container {
+    max-width: 360px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #eee;
+  }
+
+  h1 {
+    @extend h2;
+  }
+
+  .checkbox {
+    margin-bottom: 10px;
+  }
+  .checkbox {
+    font-weight: normal;
+  }
+  input[type="email"],
+  input[type="password"] {
+    @extend .form-control;
+  }
+  input[type="submit"] {
+    @extend .btn;
+    @extend .btn-lg;
+    @extend .btn-primary;
+    @extend .btn-block;
+  }
+  .actions {
+    @extend .mt-4;
+  }
+  form {
+    @extend .mb-2;
+  }
+}

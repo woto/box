@@ -6,7 +6,7 @@ App.communicate = App.cable.subscriptions.create "CommunicateChannel",
     $('#websocket-status').text('off')
 
   received: (data) ->
-    $('tbody').prepend('<tr><td>'+data+'</td></tr>');
+    $('tbody').prepend('<tr><td>'+JSON.stringify(data)+'</td></tr>');
 
   status: ->
     @perform 'status'
