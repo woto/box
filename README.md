@@ -23,7 +23,7 @@ Server - S - Сервер
 Запрос статуса от S:
 
     S > {receiver: "id", command: "status"}
-	  D > {"sender": "id", "command": "status", "is_working": "true", "cells": [{"cell": "y", "is_open": true}, {"cell": "z", "is_open": false}]
+    D > {"sender": "id", "command": "status", "is_working": "true", "cells": [{"cell": "y", "is_open": true}, {"cell": "z", "is_open": false}]
 
 статус также может прийти в любой момент со стороны D. Ответ в таком случае будет точно таким же как и в случае когда S запросил статус у D.
 
@@ -36,18 +36,18 @@ Server - S - Сервер
 
 
 ### Устройство Device:
-      Внешний идентификатор - t.string :external_reference
-      Широта - t.float :lat
-      Долгота - t.float :lng
-      Описание расположения - t.text :location
-      Работает ли? - t.boolean :is_working
+    Внешний идентификатор - t.string :external_reference
+    Широта - t.float :lat
+    Долгота - t.float :lng
+    Описание расположения - t.text :location
+    Работает ли? - t.boolean :is_working
 
 ### Ячейка Cell:
-      Принадлежность D - t.references :device, foreign_key: true
-      Внешний идентификатор - t.string :external_reference
-      Работает ли? - t.boolean :is_working
-      Заполнена ли? - t.boolean :is_fill
-      Открыта ли? - t.boolean :is_open
-      Ширина - t.integer :width
-      Высота - t.integer :height
-      Длина - t.integer :length
+    Принадлежность D - t.references :device, foreign_key: true
+    Внешний идентификатор - t.string :external_reference
+    Работает ли? - t.boolean :is_working
+    Заполнена ли? - t.boolean :is_fill
+    Открыта ли? - t.boolean :is_open
+    Ширина - t.integer :width
+    Высота - t.integer :height
+    Длина - t.integer :length
