@@ -30,7 +30,14 @@ services:
     depends_on:
       - celluloid
       - postgres
-    command: ./bin/rails s -p 8083 -b 0.0.0.0
+  sidekiq:
+    image: box
+    volumes:
+      - .:/app
+    depends_on:
+      - celluloid
+      - postgres
+    command: bundle exec sidekiq -q box_development_messages
   celluloid:
     image: box
     volumes:
@@ -40,5 +47,4 @@ services:
       - postgres
     ports:
       - "8084:8084"
-      - "8085:8085"
-    command: ruby ./ping_pong4.rb 8084
+    command: ./bin/celluloid.rb
