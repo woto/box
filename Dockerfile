@@ -23,3 +23,6 @@ RUN mkdir /app
 WORKDIR /app
 COPY . /app
 RUN bundle install
+CMD rake db:create && \
+    rake db:migrate && \
+    ./bin/rails s -p 8083 -b 0.0.0.0
