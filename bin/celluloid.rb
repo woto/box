@@ -33,11 +33,12 @@ class CelluloidServer
   end
 
   def push_to_device(hash)
-    string = hash.to_json
     @mutex.synchronize do
       @sockets.each do |socket|
         if socket.sender == hash['receiver']
           begin
+            hash.except!('receiver', 'sender')
+            string = hash.to_json
             socket.write string.encode('CP1251')
           rescue IOError => e
             info e.inspect
@@ -63,12 +64,15 @@ class CelluloidServer
 
     loop do
       read = socket.readpartial(4096)
-      socket.write "OK: #{read}"
-
       info read
       info read.bytes
 
       hash = JSON.parse(read.force_encoding('CP1251').encode('UTF-8'))
+
+      if hash['id']
+        resp = {ok: hash['id']}
+        socket.write resp.to_json
+      end
       if hash["sender"]
         socket.sender = hash["sender"]
         InMessageJob.perform_later hash
