@@ -55,7 +55,9 @@ Server - S - Сервер
 
 Нагрузочное тестирование
 
+```
 {"sender":"sender", "id":"id", "receiver":"receiver", "test":"test"}
 watch -n 0,1 "echo '{\"sender\":\"no-reply 2\", \"receiver\":\"bbb\", \"id\":\"id-of-command\", \"text\": \"text 2\"}' | nc avtorif.ru 8084"
 watch 'ps -eF | grep celluloid'
 echo '{"sender": "sender", "receiver": "receiver", "id": "id", "text": "text"}' | iconv -f utf8 -t cpvtorif.ru 8084 -q 5 | iconv -f cp1251 -t utf8
+```
